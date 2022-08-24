@@ -1,0 +1,113 @@
+@media (max-width: 768px) {
+    /* Entire Layout */
+    body {
+        height: auto;
+    }
+    .cd-section {
+        height: 800px;
+    }
+
+    .main-heading span {
+        font-size: 40px;
+    }
+    .subtxt-box {
+        width: 100%;
+        padding-left: 25px;
+    }
+    .subtxt-box:before {
+        top: 30px;
+        left: 15px;
+    }
+    .sub-heading {
+        
+    }
+    .sub-heading h2 {
+        font-size: 30px;
+    }
+
+    /* header */
+    .header-inner {
+        width: 100%;
+    }
+    .trigger {
+        right: 28px;
+        display: block;
+    }
+    
+    /* gototop */
+    .gototop {
+        position: fixed;
+        left: 20px;
+        bottom: 30px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        display: block;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 50px;
+        transform: translateY(30px);
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .gototop.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .btn-hiring {
+        right: 20px;
+        bottom: 20px;
+    }
+    .cd-vertical-nav {
+        display: none;
+    }
+    
+    /* inner */
+    .inner::before {
+        width: 20px;
+        height: 130px;
+        margin-left: 23px;
+        top: 115px;
+    }
+    .title {
+        margin: 20px 30px;
+    }
+    .number {
+        font-size: 50px;
+    }
+    .tit {
+        font-size: 50px;
+        font-weight: 500;
+    }
+    button {
+        left: 25%;
+    }
+    .desc span h3 {
+        font-size: 35px;
+    }
+
+    /* background */
+    #architecture .inner {
+        background-size: 100% 100%;
+    }
+    #megabox .inner,
+    #SCSS .inner {
+        background-size: 180% 100%;
+    }
+
+    /* Contact Section */
+    #contact .tit {
+        left: -35px;
+    }
+    #contact .tit::before {
+        width: 273px;
+        height: 20px;
+        left: 50px;
+        bottom: -50px;
+    }
+
+    /* About Section */
+    #about {
+        display: none;
+    }
+}

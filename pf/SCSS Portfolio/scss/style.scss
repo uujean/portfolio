@@ -1,0 +1,160 @@
+/* SCSS */
+@import "mixins";
+@import "map-get";
+@import "resetCSS";
+
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+/* Default CSS */
+body {
+    margin: 0;
+    font-family: map-get($font-family, kor);
+    color: map-get($font-color, primary);
+    font-size: map-get($font-size, base);
+    font-weight: 300;
+    line-height: 1.5em;
+    background-color: map-get($bg-color, primary);
+}
+
+/* Section : Portfolio */
+.portfolio {
+    height: 100vh;
+    background: url(images/background.png) no-repeat top center;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    .headline-share {
+        margin-bottom: 50px;
+        h1 {
+            @include wavy-underbar;
+            font-size: map-get($font-size, large-heading);
+            font-family: map-get($font-family, eng);
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+    .items {
+        display: grid;
+        width: 1280px;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 30px;
+        .item {
+            &.thum {
+                .photo {
+                    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+                    border-radius: 15px;
+                    height: 400px;
+                    width: 100%;
+                    overflow: hidden;
+                    img {
+                        width: inherit;
+                        height: inherit;
+                        object-fit: cover;
+                        object-position: top;
+                        transition: 2s;
+                    }
+                }
+                &:hover img {
+                    object-position: bottom;
+                }
+                .portfolio-title {
+                    display: block;
+                    text-align: center;
+                    margin: 7px;
+                    .btn-view {
+                        @include btn-base();
+                        &.pc {
+                            background-color: map-get($btn-color, pc)
+                        }
+                        &.mobile {
+                            background-color: map-get($btn-color, mobile)
+                        }
+                    }
+                }
+            }
+        }
+        aside {
+            b{
+                font-weight: normal;
+                color: crimson;
+            }
+            h2{
+                font-style: 1.6em;
+                margin-top: 15px;
+            }
+            .portfolio-info {
+                padding-left: 20px;
+                line-height: 1.8em;
+                span {
+                    display: list-item;
+                }
+            }
+        }
+    }
+}
+
+/* Tablet Breakpoint */
+@media(min-width: 768px) and (max-width: 1024px) {
+    .portfolio {
+        height: auto;
+        padding: 20px;
+        align-content: start;
+        .items {
+            width: 100%;
+            grid-template-columns: repeat(2,1fr);
+            aside.item,
+            .item.thum:nth-of-type(3) {
+                grid-column: span 2;
+            }
+        }
+        .headline-share {
+            h1 {
+                font-size: map-get($font-size, medium-heading);
+            }
+        }
+    }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+    .portfolio {
+        height: auto;
+        align-content: start;
+        padding: 20px;
+        .items {
+            width: 100%;
+            grid-template-columns: repeat(1,1fr);
+        }
+        .headline-share {
+            h1 {
+                font-size: map-get($font-size, small-heading);
+            }
+        }
+    }
+}
+
+/* Featherlight CSS */ 
+.featherlight-content {
+    width: 100%;
+    max-height: 100% !important;
+    height: 100%;
+    margin-left: 0% !important;
+}
+
+.featherlight-close-icon {
+    left: 40px !important;
+    top: 90% !important;
+    width: 50px !important;
+    height: 50px;
+    font-size: 2em;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.featherlight iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
